@@ -1,0 +1,123 @@
+Magic bytes: 50594D50 ("PYMP")
+vuint of menu definitions length
+02 - Probably a version number
+Menu definitions
+  Null terminated string
+  Consists of a list of directives, each ending with a newline
+  Directives:
+    #MENULABEL (text to show in modules menu)
+    #MENUTITLE (title of first column in menu)
+    #MENUTOP (title of next column in menu)
+    #MENUITEM (text to display in menu)|(text to insert)
+    #MENUITEM (text to display in menu)|(text to insert)|(cursor offset)
+  Special characters/color codes can be inserted:
+    <%TAB%>
+    <%NL%>
+    <%ELLIPSIS%>
+    <%LEFT_ARROW_HEAD%>
+    <%RIGHT_ARROW_HEAD%>
+    <%UP_ARROW_HEAD%>
+    <%DOWN_ARROW_HEAD%>
+    <%ANGLE%>
+    <%EXCLAM_INVERTED%>
+    <%CENT_SIGN%>
+    <%POUND_SIGN%>
+    <%CURRENCY_SIGN%>
+    <%YEN_SIGN%>
+    <%BROKEN_BAR%>
+    <%SECTION_SIGN%>
+    <%COPYRIGHT_SIGN%>
+    <%FEMININE_ORDINAL%>
+    <%LEFT_DOUBLE_ANGLE%>
+    <%NOT_SIGN%>
+    <%REGISTERED_SIGN%>
+    <%DEGREE_SIGN%>
+    <%PLUS_MINUS%>
+    <%SUPERSCRIPT_TWO%>
+    <%SUPERSCRIPT_THREE%>
+    <%MICRO_SIGN%>
+    <%PILCROW_SIGN%>
+    <%MIDDLE_DOT%>
+    <%SUPERSCRIPT_ONE%>
+    <%MASCULINE_ORDINAL%>
+    <%RIGHT_DOUBLE_ANGLE%>
+    <%FRACTION_ONE_QUARTER%>
+    <%FRACTION_ONE_HALF%>
+    <%FRACTION_THREE_QUARTERS%>
+    <%INVERTED_QUESTION_MARK%>
+    <%CAP_A_GRAVE%>
+    <%CAP_A_ACUTE%>
+    <%CAP_A_CIRCUMFLEX%>
+    <%CAP_A_TILDE%>
+    <%CAP_A_DIAERESIS%>
+    <%CAP_A_RING%>
+    <%CAP_AE%>
+    <%CAP_C_CEDILLA%>
+    <%CAP_E_GRAVE%>
+    <%CAP_E_ACUTE%>
+    <%CAP_E_CIRCUMFLEX%>
+    <%CAP_E_DIAERESIS%>
+    <%CAP_I_GRAVE%>
+    <%CAP_I_ACUTE%>
+    <%CAP_I_CIRCUMFLEX%>
+    <%CAP_I_DIAERESIS%>
+    <%CAP_ETH%>
+    <%CAP_N_TILDE%>
+    <%CAP_O_GRAVE%>
+    <%CAP_O_ACUTE%>
+    <%CAP_O_CIRCUMFLEX%>
+    <%CAP_O_TILDE%>
+    <%CAP_O_DIAERESIS%>
+    <%MULTIPLY%>
+    <%CAP_O_STROKE%>
+    <%CAP_U_GRAVE%>
+    <%CAP_U_ACUTE%>
+    <%CAP_U_CIRCUMFLEX%>
+    <%CAP_U_DIAERESIS%>
+    <%CAP_Y_ACUTE%>
+    <%CAP_THORN%>
+    <%SHARP_S%>
+    <%A_GRAVE%>
+    <%A_ACUTE%>
+    <%A_CIRCUMFLEX%>
+    <%A_TILDE%>
+    <%A_DIAERESIS%>
+    <%A_RING%>
+    <%AE%>
+    <%C_CEDILLA%>
+    <%E_GRAVE%>
+    <%E_ACUTE%>
+    <%E_CIRCUMFLEX%>
+    <%E_DIAERESIS%>
+    <%I_GRAVE%>
+    <%I_ACUTE%>
+    <%I_CIRCUMFLEX%>
+    <%I_DIAERESIS%>
+    <%ETH%>
+    <%N_TILDE%>
+    <%O_GRAVE%>
+    <%O_ACUTE%>
+    <%O_CIRCUMFLEX%>
+    <%O_TILDE%>
+    <%O_DIAERESIS%>
+    <%DIVIDE%>
+    <%O_STROKE%>
+    <%U_GRAVE%>
+    <%U_ACUTE%>
+    <%U_CIRCUMFLEX%>
+    <%U_DIAERESIS%>
+    <%Y_ACUTE%>
+    <%THORN%>
+    <%Y_DIAERESIS%>
+
+    <@BLACK@>
+    <@BLUE@>
+    <@GREEN@>
+    <@CYAN@>
+    <@RED@>
+    <@MAGENTA@>
+    <@YELLOW@>
+    <@GRAY@>
+    <@WHITE@>
+  Invalid characters of this format will cause a freeze
+A .mpy file, version 03 (micropython 1.9.3)
