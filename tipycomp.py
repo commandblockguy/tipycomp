@@ -2,7 +2,7 @@ import sys, tempfile, subprocess
 # Needs the same version as the MicroPython version the CE uses - currently 1.9.3
 import mpy_cross
 
-def vuint(num):
+def leb128(num):
 	result = bytes()
 	while num > 127:
 		result += bytes([0x80 | (num & 127)])
@@ -12,7 +12,7 @@ def vuint(num):
 
 def get_header(text):
 	result = bytes('PYMP', encoding='utf8')
-	result += vuint(len(text) + 1)
+	result += leb128(len(text) + 1)
 	result += bytes([2])
 	result += text
 	result += bytes([0])
