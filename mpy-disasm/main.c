@@ -25,10 +25,17 @@ STATIC void stderr_print_strn(void *env, const char *str, mp_uint_t len) {
 
 STATIC const mp_print_t mp_stderr_print = {NULL, stderr_print_strn};
 
-STATIC int disassemble(const char *file) {
-	mp_raw_code_t *rc = mp_raw_code_load_file(file);
-	mp_bytecode_print(rc, rc->data.u_byte.bytecode, rc->data.u_byte.bc_len, rc->data.u_byte.const_table);
-    return 0;
+STATIC void recursive_disassemble(const mp_raw_code_t *rc) {
+    mp_bytecode_print(rc, rc->data.u_byte.bytecode, rc->data.u_byte.bc_len, rc->data.u_byte.const_table);
+    for(size_t i = 0; i < rc->data.u_byte.n_raw_code; i++) {
+        const mp_raw_code_t *nrc = (const mp_raw_code_t*)rc->data.u_byte.const_table[rc->data.u_byte.n_obj + i];
+        recursive_disassemble(nrc);
+    }
+}
+
+STATIC void disassemble(const char *file) {
+	const mp_raw_code_t *rc = mp_raw_code_load_file(file);
+	recursive_disassemble(rc);
 }
 
 MP_NOINLINE int main_(int argc, char **argv) {
@@ -56,11 +63,11 @@ MP_NOINLINE int main_(int argc, char **argv) {
 
     const char *input_file = argv[1];
 
-    int ret = disassemble(input_file);
+    disassemble(input_file);
 
     mp_deinit();
 
-    return ret & 0xff;
+    return 0;
 }
 
 int main(int argc, char **argv) {
