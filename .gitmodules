@@ -1,0 +1,4 @@
+[submodule "circuitpython"]
+	path = circuitpython
+	url = https://github.com/adafruit/circuitpython
+	branch = 3.x

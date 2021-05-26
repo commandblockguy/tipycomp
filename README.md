@@ -8,13 +8,30 @@ You will need [convbin](https://github.com/mateoconlechuga/convbin). If you have
 
 You will also need version 1.9.3 specifically of the [mpy-cross](https://pypi.org/project/mpy-cross/) module. You can install it using `pip install -Iv mpy_cross==1.9.3`.
 
+To use the disassembly mode of tipydecomp, you will need to build mpy-disasm by running `make` in its directory. 
+
 ### Usage
 
-```python tipycomp.py pyfile menufile outfile varname (mpy-cross args)```
+#### tipycomp
+
+```
+python tipycomp.py pyfile menufile outfile varname (mpy-cross args)
+```
 where `pyfile` is the Python file to compile, `menufile` is a text file containing menu definitions, `outfile` is the output 8xv, and `varname` is the name of the appvar.
 You may also optionally pass additional arguments to mpy-cross by adding them after the other four arguments.
 
 To use the module, send it to the calculator using TI-Connect CE. In the Python editor, add the line `from varname import *`, where `varname` is the name of the appvar. You can then see the module's menu by pressing "math" and selecting it from the modules list.
+
+#### tipydecomp
+```
+python tipydecomp.py menu infile.8xv
+```
+to dump the menu definitions of `infile.8xv`.
+
+```
+python tipydecomp.py disasm infile.8xv
+```
+to disassemble the MicroPython bytecode of `infile.8xv`.
 
 ### Menu file format
 The menu definitions file is a plain text file containing the menu structure for the module. It consists of a series of directives, one per line. All official TI modules use Unix-style line endings, although Windows-style line endings also appear to work.
