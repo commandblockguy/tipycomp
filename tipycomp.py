@@ -29,7 +29,7 @@ def get_header(text):
 def main(pyfile, menufile, outfile, name, args):
     temp_dir = tempfile.mkdtemp(prefix='tipycomp_')
     mpy_filename = temp_dir + '/out.mpy'
-    mpy_cross.run(pyfile, '-o', mpy_filename, *args)
+    mpy_cross.run(pyfile, '-o', mpy_filename, *args).wait()
 
     text = open(menufile, 'rb').read()
     header_filename = temp_dir + '/header.bin'
